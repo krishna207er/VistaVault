@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VistaVault — Search the world in pictures</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Sticky header: brand + tagline + theme toggle -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">◈</span>
+        <div class="brand-text">
+          <h1 class="brand-name">VistaVault</h1>
+          <p class="brand-tagline">Type a topic. See the world in pictures.</p>
+        </div>
+      </div>
+
+      <!-- CSS-only theme toggle (checkbox hack, no JS yet) -->
+      <div class="theme-switch">
+        <input type="checkbox" id="theme-toggle" class="theme-toggle" />
+        <label for="theme-toggle" class="theme-label">🌙 Dark mode</label>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <!-- Search panel -->
+    <section class="search-panel" aria-label="Image search">
+      <form id="search-form" action="#" method="get">
+        <label class="search-label" for="search-input">What do you want to see?</label>
+        <div class="search-row">
+          <input
+            type="search"
+            id="search-input"
+            name="q"
+            placeholder="e.g. misty mountains, street food, neon cities…"
+            autocomplete="off"
+          />
+          <button type="submit" id="search-btn" class="btn btn-primary">Search</button>
+          <button type="reset" id="clear-btn" class="btn btn-ghost">Clear</button>
+        </div>
+      </form>
+
+      <!-- Quick-pick suggestion chips (no behaviour yet) -->
+      <div class="chip-row" aria-label="Popular topics">
+        <span class="chip-row-label">Try:</span>
+        <button type="button" class="chip">Nature</button>
+        <button type="button" class="chip">Cities</button>
+        <button type="button" class="chip">Animals</button>
+        <button type="button" class="chip">Food</button>
+        <button type="button" class="chip">Space</button>
+      </div>
+
+      <!-- Result-count placeholder (Part 2 will fill this) -->
+      <p class="result-count" id="result-count">Showing 0 results</p>
+    </section>
+
+    <!-- Results: empty, responsive grid for Part 2 -->
+    <section class="results-section" aria-label="Search results">
+      <div id="results-grid" class="results-grid">
+        <div class="empty-state" id="empty-state">
+          <span class="empty-icon" aria-hidden="true">🖼️</span>
+          <p class="empty-title">Search to see results</p>
+          <p class="empty-hint">Your image grid is waiting — type a topic above and hit Search.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>VistaVault · Part 1 — UI scaffold. Images arrive in Part 2.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
